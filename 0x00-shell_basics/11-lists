@@ -1,2 +1,2 @@
-#!/bin/bash
-ls -la $(pwd) /holberton-system_engineering-devops /boot
+C#!/bin/bash
+ls -lan $(pwd) /holberton-system_engineering-devops /boot
