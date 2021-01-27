@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -lan $(pwd) /holberton-system_engineering-devops /boot
+ls -lan . /holberton-system_engineering-devops /boot
