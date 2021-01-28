@@ -1,0 +1,4 @@
+#!/bin/bash
+read var1
+usermod -u $var1 betty
+
