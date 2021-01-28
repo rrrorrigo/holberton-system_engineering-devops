@@ -1,2 +1,0 @@
-#!/bin/bash
-chown user:group betty:holberton *
