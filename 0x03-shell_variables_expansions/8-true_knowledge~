@@ -1,0 +1,2 @@
+#!/bin/bash
+num1=128 | echo $(( 128 + TRUEKNOWLEDGE ))
