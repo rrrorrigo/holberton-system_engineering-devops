@@ -1,2 +1,2 @@
 #!/bin/bash
-cat /etc/passwd | grep "^[[:alpha:]]*:" | tr -d ":*:" | sort
+cat /etc/passwd | grep "^[[:alpha:]]*:" | tr -d "x:*:" | sort
