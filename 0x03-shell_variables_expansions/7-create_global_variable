@@ -1,2 +1,2 @@
 #!/bin/bash
-set HOLBERTON="Betty" | export $HOLBERTON
+set HOLBERTON="Betty"
