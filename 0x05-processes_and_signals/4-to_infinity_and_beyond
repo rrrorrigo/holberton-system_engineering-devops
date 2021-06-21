@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# script that display to infinity and beyond indefinitely
+for (( c=1; c = 1; ))
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
