@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# script that display all IPv4 connected
+ifconfig | awk -F "[: ]+" '/inet addr:/ {print $4}'
