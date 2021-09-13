@@ -4,8 +4,6 @@ import requests
 import csv
 from sys import argv
 
-from requests import models
-
 
 if __name__ == '__main__':
     ID = argv[1]
