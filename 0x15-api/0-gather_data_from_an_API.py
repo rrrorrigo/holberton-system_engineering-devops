@@ -18,9 +18,8 @@ if __name__ == '__main__':
     taskComplete = 0
     for tC in tL:
         taskComplete += 1 if tC.get('completed') else 0
-    string = "Employee {} is done with tasks({}/20)"\
-              .format(name, taskComplete)
-    print(string)
+    s = "Employee {} is done with tasks({}/20):".format(name, taskComplete)
+    print(s)
     for task in tL:
         if task.get('completed'):
             print("\t {}".format(task.get('title')))
