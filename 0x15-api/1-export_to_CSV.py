@@ -15,7 +15,7 @@ if __name__ == '__main__':
     user = requests.get(url)
     tL = todoList.json()
     u = user.json()[0]
-    name = u.get('name')
+    name = u.get('username')
     file = "{}.csv".format(ID)
     with open(file, mode='w') as f:
         writer = csv.writer(f, delimiter=',', quotechar='"',
