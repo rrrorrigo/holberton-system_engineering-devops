@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """ extend past Python script to export data in the CSV format."""
-import requests
-import csv
 from sys import argv
+import csv
+import requests
 
 
 if __name__ == '__main__':
