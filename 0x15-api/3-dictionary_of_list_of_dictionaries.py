@@ -24,5 +24,5 @@ if __name__ == '__main__':
                 jsonDict['task'] = task.get('title')
                 jsonDict['completed'] = task.get('completed')
                 taskList.append(jsonDict)
-        rDict[user.get('id')] = taskList
+            rDict[user.get('id')] = taskList
         json.dump(rDict, f)
