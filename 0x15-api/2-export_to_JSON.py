@@ -15,12 +15,14 @@ if __name__ == '__main__':
     u = user.json()[0]
     name = u.get('username')
     file = "{}.json".format(ID)
-    jsonDict = {}
+    taskList = []
     for task in tL:
-        jsonDict['title'] = task.get('title')
-        jsonDict['status'] = task.get('completed')
+        jsonDict = {}
+        jsonDict['task'] = task.get('title')
+        jsonDict['completed'] = task.get('completed')
         jsonDict['username'] = name
+        taskList.append(jsonDict)
     rDict = {}
-    rDict[ID] = jsonDict
+    rDict[ID] = taskList
     with open(file, 'w') as f:
         json.dump(rDict, f)
