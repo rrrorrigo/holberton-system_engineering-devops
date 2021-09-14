@@ -14,8 +14,8 @@ if __name__ == '__main__':
         rDict = {}
         for user in u:
             userDict = {}
-            taskList= []
-            todoList = requests.get(url)
+            taskList = []
+            todoList = requests.get(url + "?userId={}".format(user.get('id')))
             tL = todoList.json()
             name = user.get('username')
             for task in tL:
@@ -24,5 +24,5 @@ if __name__ == '__main__':
                 jsonDict['task'] = task.get('title')
                 jsonDict['completed'] = task.get('completed')
                 taskList.append(jsonDict)
-            rDict[user.get('id')] = taskList
+                rDict[user.get('id')] = taskList
         json.dump(rDict, f)
