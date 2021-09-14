@@ -18,7 +18,7 @@ if __name__ == '__main__':
     taskList = []
     for task in tL:
         jsonDict = {}
-        jsonDict['title'] = task.get('title')
+        jsonDict['task'] = task.get('title')
         jsonDict['completed'] = task.get('completed')
         jsonDict['username'] = name
         taskList.append(jsonDict)
