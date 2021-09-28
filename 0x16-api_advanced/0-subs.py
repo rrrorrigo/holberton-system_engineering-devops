@@ -10,6 +10,8 @@ def number_of_subscribers(subreddit):
     the function should return 0"""
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
     response = requests.get(url, headers={'User-agent': 'MyScript'})
+    if response.status_code == 404:
+        return 0
     data = response.json()
     subscribers = data.get('data').get('subscribers')
-    return subscribers if subscribers else 0
+    return subscribers
