@@ -13,6 +13,7 @@ def top_ten(subreddit):
     data = data.get('data').get('children')
     if not data:
         print("None")
-    for i in range(len(data)):
+        return
+    for i in range(10):
         if i < 10:
             print(data[i].get('data').get('title'))
