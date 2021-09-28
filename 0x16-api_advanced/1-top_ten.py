@@ -11,7 +11,7 @@ def top_ten(subreddit):
     response = requests.get(url, headers={'User-agent': 'MyScript'})
     data = response.json()
     data = data.get('data').get('children')
-    if not data:
+    if len(data) == 0:
         print("None")
         return
     for i in range(10):
