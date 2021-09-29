@@ -3,26 +3,18 @@
 import requests
 
 
-def recurse(subreddit, hot_list=[]):
+def recurse(subreddit, hot_list=[], after=""):
     '''Request subs number of given subreddit'''
-    url = 'https://www.reddit.com/r/{}.json'.format(subreddit)
-    req = requests.get(url, headers={'User-agent': 'your bot 0.1'})
+    url = 'https://www.reddit.com/r/{}/hot.json?after={}'\
+          .format(subreddit, after)
+    req = requests.get(url, headers={'User-agent': 'MyScript'},
+                      allow_redirects=False)
+    if req.status_code != 200:
+        return None
     r = req.json()['data']['children']
-    hot_list = aux(hot_list, 0, r)
-    afterId = req.json()['data']['after']
-    while afterId is not None:
-        afterId = req.json()['data']['after']
-        url = 'https://www.reddit.com/r/{}.json?after={}'.format(subreddit, afterId)
-        req = requests.get(url, headers={'User-agent': 'your bot 0.1'})
-        r = req.json()['data']['children']
-        hot_list += aux(hot_list, 0, r)
+    for title in req.get('data').get('children'):
+        hot_list.append(title.get('data').get('title'))
+    afterId = req.get('data').get('after')
+    if afterId is not None:
+        recurse(subreddit, hot_list, afterId)
     return hot_list
-
-def aux(hot_list, i, page_list):
-    '''Request subs number of given subreddit'''
-    if i == len(page_list):
-        return hot_list
-    else:
-        hot_list.append(page_list[i]['data']['title'])
-        i += 1
-        return aux(hot_list, i, page_list)
