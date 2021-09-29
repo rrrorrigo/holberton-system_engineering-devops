@@ -8,7 +8,7 @@ def recurse(subreddit, hot_list=[], after=""):
     url = 'https://www.reddit.com/r/{}/hot.json?after={}'\
           .format(subreddit, after)
     req = requests.get(url, headers={'User-agent': 'MyScript'},
-                      allow_redirects=False)
+                       allow_redirects=False)
     if req.status_code != 200:
         return None
     r = req.json()
